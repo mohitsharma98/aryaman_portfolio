@@ -1,0 +1,29 @@
+{% extends "post/base.html" %}
+
+{% block title %}
+<title>Gallery</title>    
+{% endblock title %}
+    
+{% block content %}
+
+<div class="projects-2" id="projects-2">
+    <div class="container">
+        <div class="row">
+            
+            {% for image in gallery reversed %}
+            <div class="col-md-3">
+                    <div class="card card-plain">
+                        <a href="{{image.image.url}}" data-lightbox="mygallery" data-title="{{image.image_des}}">
+                            <div class="card-header card-header-image">
+                                <img src="{{image.image.url}}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--     *********    END PROJECTS 2      *********      -->
+
+{% endblock content %}
